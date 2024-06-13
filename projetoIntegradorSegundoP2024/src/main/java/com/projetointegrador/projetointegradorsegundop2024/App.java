@@ -33,7 +33,7 @@ public class App extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
 
@@ -63,38 +63,38 @@ public class App extends Application {
 
         while (continuar) {
             try {
-                System.out.println("Escolha uma operação: 1-Listar 2-Criar 3-Atualizar 4-Excluir 5-Salvar 6-Mostrar Melhor/Pior PIBpC e IDH Educação 7-Sair");
+//                System.out.println("Escolha uma operação: 1-Listar 2-Criar 3-Atualizar 4-Excluir 5-Salvar 6-Mostrar Melhor/Pior PIBpC e IDH Educação 7-Sair");
                 int opcao = scanner.nextInt();
                 scanner.nextLine();  // Consumir nova linha
 
                 switch (opcao) {
-                    case 1:
-                        for (Municipio municipio : municipioService.listarMunicipios()) {
-                            System.out.println(municipio);
-                        }
-                        break;
+//                    case 1:
+//                        for (Municipio municipio : municipioService.listarMunicipios()) {
+//                            System.out.println(municipio);
+//                        }
+//                        break;
 
-                    case 2:
-                        System.out.println("Digite os dados do novo município (separados por vírgula):");
-                    String[] dados = scanner.nextLine().split(",");
-                    try{
-                    String codigoIBGENovo = dados[0].trim();
-                    if (municipioService.buscarMunicipioPorCodigo(codigoIBGENovo) != null) {
-                        System.out.println("Código IBGE já existente. Não é possível adicionar o município.");
-                        break;
-                    }
-                    Municipio novoMunicipio = new Municipio(dados[0].trim(), dados[1].trim(), dados[2].trim(), dados[3].trim(), dados[4].trim(),
-                            Double.parseDouble(dados[5].trim()), Double.parseDouble(dados[6].trim()), Double.parseDouble(dados[7].trim()),
-                            Double.parseDouble(dados[8].trim()), Double.parseDouble(dados[9].trim()), Double.parseDouble(dados[10].trim()),
-                            Double.parseDouble(dados[11].trim()), Double.parseDouble(dados[12].trim()), Double.parseDouble(dados[13].trim()),
-                            Double.parseDouble(dados[14].trim()));
-                    municipioService.adicionarMunicipio(novoMunicipio);
-                    System.out.println("Município adicionado com sucesso.");
-                    }catch(ArrayIndexOutOfBoundsException | NumberFormatException e){ 
-                         System.out.println("Erro ao adicionar o município: Dados inválidos.");
-                
-                    }
-                    break;
+//                    case 2:
+//                        System.out.println("Digite os dados do novo município (separados por vírgula):");
+//                    String[] dados = scanner.nextLine().split(",");
+//                    try{
+//                    String codigoIBGENovo = dados[0].trim();
+//                    if (municipioService.buscarMunicipioPorCodigo(codigoIBGENovo) != null) {
+//                        System.out.println("Código IBGE já existente. Não é possível adicionar o município.");
+//                        break;
+//                    }
+//                    Municipio novoMunicipio = new Municipio(dados[0].trim(), dados[1].trim(), dados[2].trim(), dados[3].trim(), dados[4].trim(),
+//                            Double.parseDouble(dados[5].trim()), Double.parseDouble(dados[6].trim()), Double.parseDouble(dados[7].trim()),
+//                            Double.parseDouble(dados[8].trim()), Double.parseDouble(dados[9].trim()), Double.parseDouble(dados[10].trim()),
+//                            Double.parseDouble(dados[11].trim()), Double.parseDouble(dados[12].trim()), Double.parseDouble(dados[13].trim()),
+//                            Double.parseDouble(dados[14].trim()));
+//                    municipioService.adicionarMunicipio(novoMunicipio);
+//                    System.out.println("Município adicionado com sucesso.");
+//                    }catch(ArrayIndexOutOfBoundsException | NumberFormatException e){ 
+//                         System.out.println("Erro ao adicionar o município: Dados inválidos.");
+//                
+//                    }
+//                    break;
 
                     case 3:
                         System.out.println("Digite o código IBGE do município a ser atualizado:");

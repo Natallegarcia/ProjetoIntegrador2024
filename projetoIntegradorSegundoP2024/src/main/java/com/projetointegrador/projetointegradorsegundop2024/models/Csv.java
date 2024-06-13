@@ -59,4 +59,8 @@ public class Csv {
 
         bw.close();
     }
+
+    public List<Municipio> lerCsv() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

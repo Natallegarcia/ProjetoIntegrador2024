@@ -3,5 +3,6 @@ com\projetointegrador\projetointegradorsegundop2024\PrimaryController.class
 module-info.class
 com\projetointegrador\projetointegradorsegundop2024\App.class
 com\projetointegrador\projetointegradorsegundop2024\models\Municipio.class
+com\projetointegrador\projetointegradorsegundop2024\scanner.class
 com\projetointegrador\projetointegradorsegundop2024\models\MunicipioServico.class
 com\projetointegrador\projetointegradorsegundop2024\TelaPrincipalController.class
