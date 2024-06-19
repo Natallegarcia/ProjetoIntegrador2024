@@ -2,35 +2,49 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetointegrador.projetointegradorsegundop2024.TelaPrincipalController">
+<AnchorPane onTouchPressed="#MostrarCaixaDialogo" prefHeight="630.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetointegrador.projetointegradorsegundop2024.TelaPrincipalController">
    <children>
-      <Label fx:id="lblMunicipiosBR" layoutX="10.0" layoutY="7.0" prefHeight="49.0" prefWidth="593.0" text="Municípios Brasileiros">
+      <Label fx:id="lblMunicipiosBR" layoutX="32.0" layoutY="14.0" prefHeight="49.0" prefWidth="593.0" text="Sistema de controle IBGE">
          <font>
-            <Font size="42.0" />
+            <Font name="Garamond" size="42.0" />
          </font>
       </Label>
-      <Button fx:id="btnListar" layoutX="8.0" layoutY="81.0" mnemonicParsing="false" onAction="#listarMunicipios" text="1-Listar" />
-      <Button fx:id="btnCriar" layoutX="77.0" layoutY="81.0" mnemonicParsing="false" onAction="#mensagemCriar" text="2-Criar" />
-      <Button fx:id="btnAtualizar" layoutX="145.0" layoutY="81.0" mnemonicParsing="false" text="3-Atualizar" />
-      <Button fx:id="btnExcluir" layoutX="229.0" layoutY="81.0" mnemonicParsing="false" text="4-Excluir" />
-      <Button fx:id="btnSalvar" layoutX="294.0" layoutY="81.0" mnemonicParsing="false" onAction="#salvarMunicipios" text="5-Salvar" />
-      <Button fx:id="btnMostrarIDH" layoutX="372.0" layoutY="81.0" mnemonicParsing="false" text="6-Mostrar Melhor/Pior PIBpC e IDH Educação" />
-      <Button fx:id="btnSair" layoutX="642.0" layoutY="81.0" mnemonicParsing="false" text="7-Sair" />
-      <Label fx:id="lblCriar" layoutX="17.0" layoutY="129.0" prefHeight="17.0" prefWidth="321.0" text="CRIAR " />
-      <Button fx:id="btnEnviarCriar" layoutX="420.0" layoutY="150.0" mnemonicParsing="false" onAction="#enviarCriar" text="Enviar" />
-      <Label fx:id="lblAtualizar" layoutX="17.0" layoutY="202.0" prefHeight="17.0" prefWidth="321.0" text="ATUALIZAR" />
-      <Button fx:id="btnEnviarAtualizar" layoutX="427.0" layoutY="233.0" mnemonicParsing="false" onAction="#atualizarMunicipios" text="Enviar" />
-      <TextField fx:id="txtFAtualizar" layoutX="10.0" layoutY="233.0" prefHeight="25.0" prefWidth="398.0" />
-      <TextArea fx:id="txtAREAprincipal" layoutX="17.0" layoutY="276.0" prefHeight="338.0" prefWidth="485.0" />
-      <TextField fx:id="txtfCriar" layoutX="10.0" layoutY="150.0" prefHeight="25.0" prefWidth="398.0" />
-      <Label fx:id="lblError" layoutX="628.0" layoutY="205.0" prefHeight="62.0" prefWidth="432.0" textFill="#da0b0b" />
-      <ScrollBar layoutX="17.0" layoutY="614.0" prefHeight="15.0" prefWidth="485.0" />
-      <ScrollBar layoutX="502.0" layoutY="276.0" orientation="VERTICAL" prefHeight="338.0" prefWidth="15.0" />
+      <Button fx:id="btnListar" layoutX="36.0" layoutY="83.0" mnemonicParsing="false" onAction="#listarMunicipios" text="1-Listar dados IBGE" />
+      <Button fx:id="btnCriar" layoutX="172.0" layoutY="83.0" mnemonicParsing="false" onAction="#mensagemCriar" onMouseClicked="#mostrarCriarMunicipios" text="2-Criar" />
+      <Button fx:id="btnAtualizar" layoutX="237.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#mostrarEditarMunicipios" text="3-Atualizar" />
+      <Button fx:id="btnExcluir" layoutX="325.0" layoutY="83.0" mnemonicParsing="false" onAction="#MotrarCampoExcluir" text="4-Excluir" />
+      <Button fx:id="btnSalvar" layoutX="399.0" layoutY="83.0" mnemonicParsing="false" onAction="#salvarMunicipios" text="5-Salvar" />
+      <Button fx:id="btnMostrarIDH" layoutX="481.0" layoutY="83.0" mnemonicParsing="false" onAction="#mostrarMelhor" text="6-Mostrar Melhor/Pior PIBpC e IDH Educação" />
+      <Button fx:id="btnSair" layoutX="752.0" layoutY="83.0" mnemonicParsing="false" onAction="#Sair" text="7-Sair" />
+      <Label fx:id="lblCriar" layoutX="38.0" layoutY="129.0" prefHeight="17.0" prefWidth="321.0" text="Criar novo município" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnEnviarCriar" layoutX="440.0" layoutY="150.0" mnemonicParsing="false" onAction="#enviarCriar" onDragDetected="#enviarCriar" text="Enviar" visible="false" />
+      <Label fx:id="lblAtualizar" layoutX="37.0" layoutY="182.0" prefHeight="17.0" prefWidth="321.0" text="Atualizar município" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnEnviarAtualizar" layoutX="440.0" layoutY="203.0" mnemonicParsing="false" onAction="#atualizarMunicipios" onKeyPressed="#MostrarCaixaDialogo" text="Enviar" visible="false" />
+      <TextField fx:id="txtFAtualizar" layoutX="33.0" layoutY="203.0" prefHeight="25.0" prefWidth="398.0" visible="false" />
+      <TextArea fx:id="txtAREAprincipal" layoutX="42.0" layoutY="351.0" prefHeight="260.0" prefWidth="698.0" />
+      <TextField fx:id="txtfCriar" layoutX="33.0" layoutY="150.0" prefHeight="25.0" prefWidth="398.0" visible="false" />
+      <Label fx:id="lblError" layoutX="41.0" layoutY="298.0" prefHeight="49.0" prefWidth="573.0" textFill="LIMEGREEN">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TextField fx:id="txtFExcluir" layoutX="33.0" layoutY="253.0" prefHeight="25.0" prefWidth="398.0" visible="false" />
+      <Label fx:id="lblExcluir" contentDisplay="TOP" layoutX="36.0" layoutY="235.0" prefHeight="17.0" prefWidth="157.0" text="Excluir município" textAlignment="CENTER" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnExcluir2" layoutX="439.0" layoutY="253.0" mnemonicParsing="false" onAction="#excluirMunicipios" text="Excluir" visible="false" />
+      <Button fx:id="btnLimparGrid" contentDisplay="RIGHT" layoutX="749.0" layoutY="585.0" mnemonicParsing="false" onAction="#LimparGrid" text="Limpar" />
    </children>
 </AnchorPane>

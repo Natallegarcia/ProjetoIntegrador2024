@@ -50,7 +50,7 @@ public class MunicipioServico {
             municipio.calcularClassificacoesIDH();
             municipio.atualizarUltimaAtualizacao();
 
-            // Adicione esta linha para debug
+//             Adicione esta linha para debug
             System.out.println("Município atualizado: " + municipio.formatarInfo());
             break;
         }
