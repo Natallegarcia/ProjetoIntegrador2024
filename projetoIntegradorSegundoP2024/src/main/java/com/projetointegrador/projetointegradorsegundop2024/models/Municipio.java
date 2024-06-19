@@ -292,5 +292,8 @@ public class Municipio {
         rendaMedia, rendaNominal, peaDia, idhEducacao, idhLongevidade, densidadeDemografica, pibPerCapita, 
         classificacaoIDH, classificacaoIDHEducacao, classificacaoIDHLongevidade, ultimaAtualizacao
     );
+    
+    
+    
 }
 }
