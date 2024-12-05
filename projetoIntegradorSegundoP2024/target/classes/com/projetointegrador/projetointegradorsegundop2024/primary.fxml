@@ -1,47 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.PerspectiveTransform?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="512.0" prefWidth="645.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetointegrador.projetointegradorsegundop2024.PrimaryController">
+<VBox alignment="CENTER" prefHeight="537.0" prefWidth="773.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetointegrador.projetointegradorsegundop2024.PrimaryController">
    <children>
-      <AnchorPane fx:id="anchorPrincipalLogin" prefHeight="341.0" prefWidth="790.0">
+      <AnchorPane fx:id="anchorPrincipalLogin" prefHeight="432.0" prefWidth="733.0">
          <children>
-            <Label fx:id="lblBemVindo" alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" layoutY="25.0" prefHeight="38.0" prefWidth="174.0" text="Bem vindo!" textAlignment="JUSTIFY">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="355.0" layoutX="200.0" layoutY="62.0" stroke="BLACK" strokeType="INSIDE" width="307.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Rectangle>
+            <AnchorPane layoutX="528.0" layoutY="62.0" prefHeight="83.0" prefWidth="83.0">
+               <children>
+                  <ImageView fx:id="imgViewIBGE" disable="true" fitHeight="87.0" fitWidth="83.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../Pictures/IBGE.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="lblBemVindo" alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="98.0" prefHeight="38.0" prefWidth="174.0" text="Bem vindo!" textAlignment="JUSTIFY">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Garamond Bold" size="22.0" />
                </font>
-            </Label>
-            <Button fx:id="primaryButton" layoutX="249.0" layoutY="231.0" onAction="#switchToSecondary" text="Entrar">
                <effect>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
+                  <SepiaTone>
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </SepiaTone>
                </effect>
-            </Button>
-            <Label fx:id="lblLogin" alignment="BASELINE_LEFT" layoutX="209.0" layoutY="81.0" prefHeight="38.0" prefWidth="83.0" text="Login" textOverrun="CENTER_ELLIPSIS" />
-            <Label fx:id="lblSenha" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="209.0" layoutY="147.0" prefHeight="38.0" prefWidth="53.0" text="Senha" textAlignment="JUSTIFY" />
-            <TextField fx:id="txtFildLogin" layoutX="201.0" layoutY="119.0" opacity="0.3" promptText="email">
+            </Label>
+            <Label fx:id="lblLogin" alignment="BASELINE_LEFT" layoutX="288.0" layoutY="154.0" prefHeight="38.0" prefWidth="83.0" text="Login" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Garamond" size="14.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect></Label>
+            <Label fx:id="lblSenha" alignment="BASELINE_LEFT" contentDisplay="CENTER" layoutX="288.0" layoutY="220.0" prefHeight="38.0" prefWidth="53.0" text="Senha" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Garamond" size="14.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect></Label>
+            <TextField fx:id="txtFildLogin" layoutX="288.0" layoutY="192.0" opacity="0.83" promptText="email">
                <font>
                   <Font name="System Italic" size="10.0" />
                </font>
                <effect>
                   <Lighting>
                      <bumpInput>
-                        <Shadow />
+                        <PerspectiveTransform />
                      </bumpInput>
                      <light>
                         <Light.Distant />
@@ -49,14 +103,14 @@
                   </Lighting>
                </effect>
             </TextField>
-            <TextField fx:id="txtFiledSenha" layoutX="199.0" layoutY="185.0" opacity="0.3" promptText="min. 6 caracteres">
+            <TextField fx:id="txtFiledSenha" layoutX="288.0" layoutY="258.0" opacity="0.83" promptText="min. 4 caracteres">
                <font>
-                  <Font size="10.0" />
+                  <Font name="System Italic" size="10.0" />
                </font>
                <effect>
                   <Lighting>
                      <bumpInput>
-                        <Shadow />
+                        <PerspectiveTransform />
                      </bumpInput>
                      <light>
                         <Light.Distant />
@@ -64,6 +118,7 @@
                   </Lighting>
                </effect>
             </TextField>
+            <Button fx:id="primaryButton" layoutX="310.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToSecondary" text="Entrar" />
          </children>
          <VBox.margin>
             <Insets />
